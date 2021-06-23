@@ -1,4 +1,6 @@
 {
+    "name": "FFriends",
+    "description": "Find a friend",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
