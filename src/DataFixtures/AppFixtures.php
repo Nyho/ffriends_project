@@ -26,7 +26,7 @@ class AppFixtures extends Fixture
             $rentable->setPicture("https://randomuser.me/api/portraits/men/".$i."jpg");
             $rentable->setAge($faker -> numberBetween(5,500));
 
-                for ($i = 0; $i < 500; $i++) {
+                for ($g = 0; $g < 12; $g++) {
                     $comment = new Comment();
                     $comment->setContent($faker -> text);
                     $comment->setUserName($faker -> userName);
@@ -36,10 +36,8 @@ class AppFixtures extends Fixture
                 }
 
             $manager->persist($rentable);
+            $manager->flush();
         }
 
-
-
-        $manager->flush();
     }
 }
