@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rentable index{% endblock %}
+
+{% block body %}
+    <h1>Rentable index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Description</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Location</th>
+                <th>Picture</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rentable in rentables %}
+            <tr>
+                <td>{{ rentable.id }}</td>
+                <td>{{ rentable.firstName }}</td>
+                <td>{{ rentable.lastName }}</td>
+                <td>{{ rentable.description }}</td>
+                <td>{{ rentable.email }}</td>
+                <td>{{ rentable.age }}</td>
+                <td>{{ rentable.location }}</td>
+                <td>{{ rentable.picture }}</td>
+                <td>
+                    <a href="{{ path('rentable_show', {'id': rentable.id}) }}">show</a>
+                    <a href="{{ path('rentable_edit', {'id': rentable.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('rentable_new') }}">Create new</a>
+{% endblock %}

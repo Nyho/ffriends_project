@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ffd473ca-f73b-467a-9920-b5eec4b0623b" name="ffamies">
+        <fileTransfer accessType="SFTP" host="ffriends.syllab.com" port="22" sshConfigId="811efd64-cd77-4d6e-b54f-879400393c92" sshConfig="ffriends@ffriends.syllab.com:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rentable{% endblock %}
+
+{% block body %}
+    <h1>Rentable</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rentable.id }}</td>
+            </tr>
+            <tr>
+                <th>FirstName</th>
+                <td>{{ rentable.firstName }}</td>
+            </tr>
+            <tr>
+                <th>LastName</th>
+                <td>{{ rentable.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ rentable.description }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ rentable.email }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ rentable.age }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ rentable.location }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{{ rentable.picture }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('rentable_index') }}">back to list</a>
+
+    <a href="{{ path('rentable_edit', {'id': rentable.id}) }}">edit</a>
+
+    {{ include('rentable/_delete_form.html.twig') }}
+{% endblock %}
