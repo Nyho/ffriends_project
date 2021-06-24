@@ -16,24 +16,21 @@ class AppFixtures extends Fixture
         // $manager->persist($product);
 
         for ($i = 0; $i < 20; $i++) {
-            $faker = Factory::create();
             $rentable = new Rentable();
-            $rentable->setFirstName($faker -> firstName);
-            $rentable->setLastName($faker -> lastName);
-            $rentable->setDescription($faker -> text);
-            $rentable->setLocation($faker -> city);
-            $rentable->setEmail($faker -> email);
+            $rentable->setFirstName('jeanPaul'.$i);
+            $rentable->setLastName('dupont'.$i);
+            $rentable->setDescription("J'aime les patates douces" .$i);
+            $rentable->setLocation('par la ' .$i);
+            $rentable->setEmail('jeanPaul@dawdawdawdawd.dawdwad'.$i);
             $rentable->setPicture("https://randomuser.me/api/portraits/men/".$i."jpg");
-            $rentable->setAge($faker -> numberBetween(5,500));
+            $rentable->setAge(rand(2, 500));
 
                 for ($g = 0; $g < 12; $g++) {
                     $comment = new Comment();
-                    $comment->setContent($faker -> text);
-                    $comment->setUserName($faker -> userName);
+                    $comment->setContent('blabla' .$g) ;
+                    $comment->setUserName('michel'.$i);
                     $manager->persist($comment);
                     $rentable->addComment($comment);
-
-
                 }
 
             $manager->persist($rentable);
