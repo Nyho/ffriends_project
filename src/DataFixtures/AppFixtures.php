@@ -33,6 +33,7 @@ class AppFixtures extends Fixture
                     $manager->persist($comment);
                     $rentable->addComment($comment);
 
+
                 }
 
             $manager->persist($rentable);
