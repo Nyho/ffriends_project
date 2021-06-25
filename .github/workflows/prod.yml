@@ -26,15 +26,13 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
-
     - name: Archive artifacts
       uses: actions/upload-artifact@v2.2.4
       with:
         name: ffriends-app
         path: |
           ./
+          !vendor
           !var
           !composer.lock
           !.*
