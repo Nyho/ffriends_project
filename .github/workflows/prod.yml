@@ -35,7 +35,6 @@ jobs:
         name: ffriends-app
         path: |
           ./
-          !vendor
           !var
           !composer.lock
           !.*
