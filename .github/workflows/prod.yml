@@ -37,6 +37,7 @@ jobs:
           ./
           !vendor
           !var
+          !composer.lock
           !.*
 
   deploy:
