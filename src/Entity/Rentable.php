@@ -6,6 +6,8 @@ use App\Repository\RentableRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use InvalidArgumentException;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=RentableRepository::class)
@@ -41,6 +43,8 @@ class Rentable
 
     /**
      * @ORM\Column(type="integer")
+     *
+     * @Assert\LessThanOrEqual(5)
      */
     private $age;
 
@@ -124,6 +128,9 @@ class Rentable
 
     public function setAge(int $age): self
     {
+        if ($age > 100 ) {
+            throw new InvalidArgumentException('limit age exceed, t tro vieu');
+        }
         $this->age = $age;
 
         return $this;
